@@ -1,0 +1,58 @@
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: auto;
+
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+  border: 1px solid black;
+}
+
+.display {
+  height: fit-content;
+}
+
+.display input {
+  padding: 0.5rem;
+}
+
+.numbers {
+  width: auto;
+
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.numbers .grid-item,
+.numbers .delete,
+.numbers .clear {
+  display: flex;
+  justify-content: center;
+
+  padding: 1rem;
+  border: 1px solid black;
+
+  margin: 0.2rem;
+
+  transition-duration: 0.3s;
+}
+
+.numbers .grid-item:hover,
+.numbers .delete:hover,
+.numbers .clear:hover {
+  background-color: royalblue;
+  cursor: pointer;
+}
+
+li {
+  padding-top: 1rem;
+}
