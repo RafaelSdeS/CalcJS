@@ -29,12 +29,12 @@ ul {
   margin-top: 1rem;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.numbers .grid-item,
-.numbers .delete,
-.numbers .clear {
+.grid-item,
+.delete,
+.clear {
   display: flex;
   justify-content: center;
 
@@ -46,10 +46,10 @@ ul {
   transition-duration: 0.3s;
 }
 
-.numbers .grid-item:hover,
-.numbers .delete:hover,
-.numbers .clear:hover {
-  background-color: royalblue;
+.grid-item:hover,
+.delete:hover,
+.clear:hover {
+  background-color: black;
   cursor: pointer;
 }
 

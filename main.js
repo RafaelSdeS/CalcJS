@@ -1,8 +1,10 @@
 let display = document.querySelector('input')
+
 const button = document.querySelectorAll('.grid-item')
+const list = document.querySelector('ul')
+
 const deleteButton = document.querySelector('.delete')
 const clearButton = document.querySelector('.clear')
-const list = document.querySelector('ul')
 
 button.forEach(button => {
   button.addEventListener('click', () => {
@@ -24,31 +26,28 @@ const Delete = {
 
 const Calculation = {
   calc() {
-    let parts = display.value.split('+')
-    parts.forEach(part => {
-      let item = document.createElement('li')
-      item.textContent = part
-      list.appendChild(item)
-    })
+    let dispalyString = display.value
+    let item = document.createElement('li')
+    item.textContent = `${dispalyString} = ${eval(dispalyString)}`
+    list.appendChild(item)
   }
+}
+
+window.onclick = () => {
+  display.focus()
 }
 
 deleteButton.addEventListener('click', () => Delete.delete())
 
 clearButton.addEventListener('click', () => Delete.clear())
 
-document.addEventListener('keydown', e => {
-  if (e.key == 'Backspace') {
-    Delete.delete()
-  }
-  if (e.key == 'Delete') {
-    Delete.delete()
-  }
-
+display.addEventListener('keyup', e => {
   if (e.key == 'c') {
     Delete.clear()
   }
+})
 
+document.addEventListener('keydown', e => {
   if (e.key == 'Enter') {
     Calculation.calc()
   }
