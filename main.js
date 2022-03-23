@@ -42,7 +42,7 @@ deleteButton.addEventListener('click', () => Delete.delete())
 clearButton.addEventListener('click', () => Delete.clear())
 
 display.addEventListener('keyup', e => {
-  if (e.key == 'c') {
+  if (e.key == 'Delete') {
     Delete.clear()
   }
 })

@@ -1,32 +1,50 @@
 ul {
   list-style: none;
+  padding: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+input:focus {
+  outline: none;
+}
+
+.all {
+  display: flex;
+  flex-direction: row;
+
+  gap: 7rem;
 }
 
 .container {
-  margin: auto;
+  display: flex;
+  flex-flow: column;
 
-  display: grid;
-  grid-template-columns: auto;
-
-  justify-content: center;
-  align-items: center;
-
-  width: fit-content;
+  height: 80vh;
   border: 1px solid black;
 }
 
 .display {
-  height: fit-content;
+  height: 10rem;
+  width: auto;
+  padding-bottom: 1rem;
 }
 
 .display input {
+  border: none;
+
   padding: 0.5rem;
+  height: 100px;
+  width: 96, 9%;
 }
 
 .numbers {
-  width: auto;
-
-  margin-top: 1rem;
+  width: 100%;
+  height: 100%;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -37,9 +55,12 @@ ul {
 .clear {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   padding: 1rem;
   border: 1px solid black;
+
+  font-size: 2rem;
 
   margin: 0.2rem;
 
@@ -49,10 +70,20 @@ ul {
 .grid-item:hover,
 .delete:hover,
 .clear:hover {
-  background-color: black;
+  background-color: royalblue;
   cursor: pointer;
 }
 
-li {
+.numbers li {
   padding-top: 1rem;
+}
+
+.history {
+  display: flex;
+  flex-flow: column;
+
+  align-items: center;
+
+  width: 100%;
+  justify-content: flex-start;
 }

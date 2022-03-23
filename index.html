@@ -8,35 +8,37 @@
     <title>CalcJS</title>
   </head>
   <body>
-    <div class="container">
-      <div class="display">
-        <input type="text" step="0.001" placeholder="0.000" size="40" />
+    <div class="all">
+      <div class="container">
+        <div class="display">
+          <input type="text" step="0.001" placeholder="0.000" />
+        </div>
+        <div class="numbers">
+          <div class="delete">D</div>
+          <div class="clear">C</div>
+          <div class="grid-item">0</div>
+          <div class="grid-item">+</div>
+
+          <div class="grid-item">1</div>
+          <div class="grid-item">2</div>
+          <div class="grid-item">3</div>
+          <div class="grid-item">-</div>
+
+          <div class="grid-item">4</div>
+          <div class="grid-item">5</div>
+          <div class="grid-item">6</div>
+          <div class="grid-item">x</div>
+
+          <div class="grid-item">7</div>
+          <div class="grid-item">8</div>
+          <div class="grid-item">9</div>
+          <div class="grid-item">/</div>
+        </div>
       </div>
-      <div class="numbers">
-        <div class="delete">Delete</div>
-        <div class="clear">Clear</div>
-        <div class="grid-item">0</div>
-        <div class="grid-item">+</div>
-
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">-</div>
-
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">x</div>
-
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>
-        <div class="grid-item">/</div>
+      <div class="history">
+        <h2>Previous calculations</h2>
+        <ul></ul>
       </div>
-    </div>
-    <div class="history">
-      <h2>Previous calculations</h2>
-      <ul></ul>
     </div>
   </body>
   <script src="main.js"></script>
