@@ -5,6 +5,11 @@ const list = document.querySelector('ul')
 
 const deleteButton = document.querySelector('.delete')
 const clearButton = document.querySelector('.clear')
+const closeButton = document.querySelector('.close')
+const modal = document.querySelector('.modal-wraper')
+const instructions = document.getElementById('instructions')
+const nav = document.querySelector('nav')
+const toggleNav = document.querySelector('.toggle-nav')
 
 button.forEach(button => {
   button.addEventListener('click', () => {
@@ -28,8 +33,24 @@ const Calculation = {
   calc() {
     let dispalyString = display.value
     let item = document.createElement('li')
-    item.textContent = `${dispalyString} = ${eval(dispalyString)}`
+    item.innerHTML = `
+    <div class='result'>${dispalyString} = ${eval(dispalyString)}</div>
+     <div class='editButton'>E</div>
+     <div class='removeButton'>X</div>`
     list.appendChild(item)
+    display.value = eval(dispalyString)
+  }
+}
+
+const Modal = {
+  toggle() {
+    modal.classList.toggle('active')
+  }
+}
+
+const Nav = {
+  toggle() {
+    nav.classList.toggle('deactive')
   }
 }
 
@@ -40,6 +61,26 @@ window.onclick = () => {
 deleteButton.addEventListener('click', () => Delete.delete())
 
 clearButton.addEventListener('click', () => Delete.clear())
+
+closeButton.addEventListener('click', () => {
+  Modal.toggle()
+})
+
+instructions.addEventListener('click', () => {
+  Modal.toggle()
+})
+
+toggleNav.addEventListener('click', () => {
+  Nav.toggle()
+})
+
+document.addEventListener('keydown', e => {
+  console.log(e.key)
+
+  if (e.key == 'Escape') {
+    Modal.toggle()
+  }
+})
 
 display.addEventListener('keyup', e => {
   if (e.key == 'Delete') {
