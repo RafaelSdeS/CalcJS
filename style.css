@@ -1,11 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 :root {
   --details: rgb(41, 41, 41);
   --input-background: rgb(241, 241, 241);
+
+  --titles-font-size: 1.5rem;
+  --text-font-size: 1rem;
 }
 
 body {
   margin: 0;
 }
+
 
 ul {
   list-style: none;
@@ -14,6 +25,7 @@ ul {
 
 a {
   text-decoration: none;
+  color:rgb(39, 39, 206);
 }
 
 input {
@@ -26,23 +38,24 @@ input:focus {
   outline: none;
 }
 
-/* ================================== */
+/* ================ NAV ================== */
 
 nav {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   border-bottom: 1px solid black;
 
   padding: 1rem 0.2rem;
-  margin: 1rem 2rem;
+  margin: 0 4rem;
 
   z-index: 1;
   opacity: 1;
   visibility: visible;
 
-  font-size: 15px;
+  font-size: var(--text-font-size);
 }
 
 nav.deactive {
@@ -58,7 +71,7 @@ nav.deactive {
 }
 
 nav h2 {
-  margin: auto;
+  margin: 0.5rem auto;
 }
 
 .toggle-nav {
@@ -68,10 +81,30 @@ nav h2 {
 
   top: 10px;
   right: 10px;
+
+  padding: 0.2rem;
+
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.toggle-nav.open{
+  transition-duration: 0.3s;
+}
+
+.toggle-nav.closed {
+  transform: rotate(180deg) ;
+  transition-duration: 0.3s;
 }
 
 #instructions {
+  font-size: var(--text-font-size);
+
   cursor: pointer;
+}
+
+.instructions li {
+  padding: 0.5rem 0rem;
 }
 
 .all {
@@ -83,13 +116,15 @@ nav h2 {
   padding: 2rem 2rem;
 }
 
-.container {
+.calculator {
   display: flex;
   flex-flow: column;
 
   height: 80vh;
+  width: min(50rem, 100%);
 
   border: 1px solid var(--details);
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .display {
@@ -103,6 +138,8 @@ nav h2 {
 
   height: 100px;
   width: 100%;
+
+  border-radius: 0.5rem 0.5rem 0 0;
 
   background-color: var(--input-background);
 }
@@ -122,7 +159,6 @@ nav h2 {
   justify-content: center;
   align-items: center;
 
-  padding: 1rem;
   border: 1px solid var(--details);
 
   font-size: clamp(1rem, 130%, 2rem);
@@ -130,6 +166,9 @@ nav h2 {
   margin: 0.2rem;
 
   transition-duration: 0.3s;
+
+  border-radius: 0.8rem;
+
 }
 
 .grid-item:hover,
@@ -153,10 +192,11 @@ nav h2 {
   height: fit-content;
 
   border: 1px solid black;
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem ;
 }
 
 .history h2 {
-  font-size: 2rem;
+  font-size: var(--titles-font-size);
 
   margin: 0.2rem auto;
 }
@@ -169,6 +209,11 @@ nav h2 {
   margin: 1rem 0;
 }
 
+.history .removeButton,
+.history .editButton {
+  cursor: pointer;
+}
+
 .result,
 .removeButton,
 .editButton {
@@ -176,14 +221,15 @@ nav h2 {
 }
 
 .modal-wraper {
-  width: 50%;
-  height: 50%;
+  position: fixed;
+  top: 10%;
+
+  margin: 0.5rem;
+
+  width: auto;
+  height: fit-content;
 
   background-color: rgba(92, 92, 92, 0.7);
-
-  position: fixed;
-  top: 25%;
-  left: 25%;
 
   display: flex;
   align-items: center;
@@ -222,17 +268,38 @@ nav h2 {
   cursor: pointer;
 }
 
+
+
 @media (min-width: 700px) {
+  :root{
+    --text-font-size: 1.2rem;
+    --titles-font-size: 1.8rem;
+  }
+  
   .all {
     flex-direction: row;
-  }
-
-  .container {
-    width: 100rem;
   }
 
   nav {
     padding: 1rem 1rem;
     margin: 1rem 2rem;
+  }
+
+  .modal-wraper{
+    top: 15%;
+    left:2.5%;
+
+  }
+}
+
+@media(min-width: 900px){
+  :root{
+    --text-font-size: 1.5rem;
+    --titles-font-size: 2rem;
+  }
+
+  .modal-wraper{
+    top: 25%;
+    left:25%;
   }
 }
